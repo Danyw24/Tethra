@@ -1,6 +1,6 @@
 # TETHRA
 # Developed by danyw24 
-# 0.1v
+# 0.2v
 # Encrypted chat system 
 
 

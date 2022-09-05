@@ -1,6 +1,6 @@
 #Tethra serve
 #Developed by danyw24
-# 0.1v
+# 0.2v
 # Server
 
 # Color snippets
@@ -31,13 +31,11 @@ info2  =   f"{green}[{white}•{green}] {purple}"
 
 
 
-from email import message
 import threading
 import socket
 import time
 from os import system
 
-from server import broadcast
 host = 'localhost'
 port = 8080
 skserver = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -59,7 +57,7 @@ def recive_connections():
         connections.append(connection)
 
         message = f"{success} New connetion : {username}".encode("utf-8")
-        broadcast(message, connection)
+        Broadcast(message, connection)
         print(f"{info} Address: {address}, Time: D{time.localtime().tm_mday} {time.localtime().tm_hour}h {time.localtime().tm_min}min {time.localtime().tm_sec}sec")
 
         thread_rm = threading.Thread(target=recive_messages, args=(connection,))
